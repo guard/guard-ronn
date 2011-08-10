@@ -1,4 +1,4 @@
-# Guard::Ronn ![travis-ci](http://travis-ci.org/guard/guard-ronn.png)
+# Guard::Ronn [![Build Status](https://secure.travis-ci.org/guard/guard-ronn.png)](http://travis-ci.org/guard/guard-ronn)
 
 Ronn guard automatically build manuals when markdown source files are modified.
 
