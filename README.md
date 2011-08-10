@@ -1,6 +1,6 @@
 # Guard::Ronn [![Build Status](https://secure.travis-ci.org/guard/guard-ronn.png)](http://travis-ci.org/guard/guard-ronn)
 
-Ronn guard automatically build manuals when markdown source files are modified.
+[Ronn](https://github.com/rtomayko/ronn) guard automatically build manuals when markdown source files are modified.
 
 ## Compatibility
 
@@ -38,7 +38,7 @@ $ guard init ronn
 Usage
 -----
 
-Please read [Guard usage doc](https://github.com/guard/guard#readme)
+Please read [Guard usage doc](https://github.com/guard/guard#readme).
 
 By default, Guard::Ronn watch for files with the `.md` or `.markdown` extension in the `man` directory.
 
@@ -67,7 +67,7 @@ end
 ### List of available options:
 
 ``` ruby
-:cli => "-html"   # pass arbitrary Ronn CLI arguments, default: ""
+:cli => "--html"  # pass arbitrary Ronn CLI arguments, default: ""
 :bundler => false # don't use "bundle exec" to run the Ronn command, default: true
 ```
 
@@ -82,7 +82,7 @@ Pull requests are very welcome! Make sure your patches are well tested. Please c
 Testing
 -------
 
-`rake spec` and `rake spec:portability` (to test against multiple rubies).
+`bundle exec guard` and `rake spec:portability` (to test against multiple rubies).
 
 Author
 ------
