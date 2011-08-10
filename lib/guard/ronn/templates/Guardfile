@@ -1,0 +1,3 @@
+guard 'ronn' do
+  watch(%r{^man/.+\.m(ark)?d(own)?$})
+end
