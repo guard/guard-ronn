@@ -3,6 +3,8 @@ source "http://rubygems.org"
 # Specify your gem's dependencies in guard-ronn.gemspec
 gemspec
 
+gem 'rake'
+
 gem 'guard', :git => 'git://github.com/guard/guard.git'
 gem 'guard-rspec'
 
