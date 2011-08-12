@@ -4,7 +4,7 @@
 
 ## Compatibility
 
-* Compatible with Ronn 0.7.3.
+* Compatible with Ronn ~> 0.7.3.
 * Tested on Ruby 1.8.7, 1.9.2, REE, Rubinius & JRuby.
 
 ## Install
@@ -35,26 +35,24 @@ Add Guard definition to your `Guardfile` by running this command:
 $ guard init ronn
 ```
 
-Usage
------
+## Usage
 
 Please read [Guard usage doc](https://github.com/guard/guard#readme).
 
-By default, Guard::Ronn watch for files with the `.md` or `.markdown` extension in the `man` directory.
+By default, Guard::Ronn watch for files with the `.ronn`, `.md` or `.markdown` extension in the `man` directory.
 
-Guardfile
----------
+## Guardfile
 
 ``` ruby
 guard 'ronn' do
+  watch(%r{^man/.+\.ronn$})
   watch(%r{^man/.+\.m(ark)?d(own)?$})
 end
 ```
 
 Please read [Guard doc](https://github.com/guard/guard#readme) for more information about the Guardfile DSL.
 
-Options
--------
+## Options
 
 You can pass any of the standard Ronn CLI options using the `:cli` option:
 
@@ -71,20 +69,21 @@ end
 :bundler => false # don't use "bundle exec" to run the Ronn command, default: true
 ```
 
-Development
------------
+## Bonus: reading gems' man pages from the `man` command
+
+You can use the awesome [gem-man](https://github.com/defunkt/gem-man) by [defunkt](https://github.com/defunkt).
+
+## Development
 
 * Source hosted at [GitHub](https://github.com/guard/guard-ronn)
 * Report issues/Questions/Feature requests on [GitHub Issues](https://github.com/guard/guard-ronn/issues)
 
 Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change you make. Also, please update the README and the CHANGELOG.
 
-Testing
--------
+## Testing
 
 `bundle exec guard` and `rake spec:portability` (to test against multiple rubies).
 
-Author
-------
+## Author
 
 [Rémy Coutable](https://github.com/rymai)
