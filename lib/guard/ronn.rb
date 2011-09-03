@@ -24,7 +24,7 @@ module Guard
     end
 
     def run_on_change(paths)
-      Runner.run(paths, @options)
+      Runner.run(Inspector.clean(paths), @options)
     end
 
   end

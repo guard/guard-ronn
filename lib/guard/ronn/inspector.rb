@@ -5,25 +5,25 @@ module Guard
         def clean(paths)
           paths.uniq!
           paths.compact!
-          clear_markdown_files_list_after do
-            paths = paths.select { |path| markdown_file?(path) }
+          clear_ronn_files_list_after do
+            paths = paths.select { |path| ronn_file?(path) }
           end
           paths.reject { |p| included_in_other_path?(p, paths) }
         end
 
       private
 
-        def markdown_file?(path)
-          markdown_files.include?(path)
+        def ronn_file?(path)
+          ronn_files.include?(path)
         end
 
-        def markdown_files
-          @markdown_files ||= Dir["man/*.{md,markdown}"]
+        def ronn_files
+          @ronn_files ||= Dir["man/*.{ronn,md,markdown}"]
         end
 
-        def clear_markdown_files_list_after
+        def clear_ronn_files_list_after
           yield
-          @markdown_files = nil
+          @ronn_files = nil
         end
 
         def included_in_other_path?(path, paths)

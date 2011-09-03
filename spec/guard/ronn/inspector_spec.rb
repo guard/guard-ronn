@@ -3,7 +3,11 @@ require 'spec_helper'
 describe Guard::Ronn::Inspector do
   describe ".clean" do
     before do
-      Dir.stub(:[]) { Dir.glob("spec/fixtures/*.{md,markdown}") }
+      Dir.stub(:[]) { Dir.glob("spec/fixtures/*.{ronn,md,markdown}") }
+    end
+
+    it "removes non-ronn files 1" do
+      subject.clean(["spec/fixtures/guard-ronn.ronn", "spec/fixtures/guard-ronn.html"]).should == ["spec/fixtures/guard-ronn.ronn"]
     end
 
     it "removes non-markdown files 1" do
@@ -11,15 +15,15 @@ describe Guard::Ronn::Inspector do
     end
 
     it "removes non-markdown files 2" do
-      subject.clean(["spec/fixtures/guard-ronn.md", "spec/fixtures/guard-ronn.html"]).should == ["spec/fixtures/guard-ronn.md"]
+      subject.clean(["spec/fixtures/guard-ronn.markdown", "spec/fixtures/guard-ronn.html"]).should == ["spec/fixtures/guard-ronn.markdown"]
     end
 
     it "removes non-existing files" do
-      subject.clean(["spec/fixtures/guard-ronn.md", "spec/fixtures/guard-foo.md"]).should == ["spec/fixtures/guard-ronn.md"]
+      subject.clean(["spec/fixtures/guard-ronn.ronn", "spec/fixtures/guard-foo.ronn"]).should == ["spec/fixtures/guard-ronn.ronn"]
     end
 
     it "removes duplication" do
-      subject.clean(["spec/fixtures/guard-ronn.md", "spec/fixtures/guard-ronn.md"]).should == ["spec/fixtures/guard-ronn.md"]
+      subject.clean(["spec/fixtures/guard-ronn.ronn", "spec/fixtures/guard-ronn.ronn"]).should == ["spec/fixtures/guard-ronn.ronn"]
     end
 
   end

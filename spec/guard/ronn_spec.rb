@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Guard::Ronn do
+  before do
+    Dir.stub(:[]) { Dir.glob("spec/fixtures/*.{ronn,md,markdown}") }
+  end
   let(:default_options) { {} }
   subject { Guard::Ronn.new }
 
@@ -26,14 +29,14 @@ describe Guard::Ronn do
 
   describe "#run_on_change" do
     it "runs Ronn with paths" do
-      Guard::Ronn::Runner.should_receive(:run).with(["man/guard-ronn.md"], default_options)
-      subject.run_on_change(["man/guard-ronn.md"])
+      Guard::Ronn::Runner.should_receive(:run).with(["spec/fixtures/guard-ronn.md"], default_options)
+      subject.run_on_change(["spec/fixtures/guard-ronn.md"])
     end
 
     it "directly passes :cli option to runner" do
       subject = Guard::Ronn.new([], { :cli => "--html" })
-      Guard::Ronn::Runner.should_receive(:run).with(["man/guard-ronn.md"], default_options.merge(:cli => "--html"))
-      subject.run_on_change(["man/guard-ronn.md"])
+      Guard::Ronn::Runner.should_receive(:run).with(["spec/fixtures/guard-ronn.md"], default_options.merge(:cli => "--html"))
+      subject.run_on_change(["spec/fixtures/guard-ronn.md"])
     end
   end
 
