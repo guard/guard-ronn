@@ -78,7 +78,15 @@ You can use the awesome [gem-man](https://github.com/defunkt/gem-man) by [defunk
 * Source hosted at [GitHub](https://github.com/guard/guard-ronn)
 * Report issues/Questions/Feature requests on [GitHub Issues](https://github.com/guard/guard-ronn/issues)
 
-Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change you make. Also, please update the README and the CHANGELOG.
+Pull requests are very welcome! Please try to follow these simple "rules", though:
+
+- Please create a topic branch for every separate change you make;
+- Make sure your patches are well tested;
+- Update the README (if applicable);
+- Update the CHANGELOG (maybe not for a typo but don't hesitate!);
+- Please do not change the version number.
+
+For questions please join us on our [Google group](http://groups.google.com/group/guard-dev) or on `#guard` (irc.freenode.net).
 
 ## Testing
 
