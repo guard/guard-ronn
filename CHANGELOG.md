@@ -1,3 +1,9 @@
+## Master
+
+### Change:
+
+* Updated for Guard 1.1
+
 ## 0.1.2 - September 3, 2011
 
 ### Improvement
