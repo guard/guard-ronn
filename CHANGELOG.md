@@ -1,8 +1,8 @@
-## Master
+## 0.2.0 - June 3, 2012
 
 ### Change:
 
-* Updated for Guard 1.1
+* Updated for Guard 1.1 ([@rymai][])
 
 ## 0.1.2 - September 3, 2011
 
