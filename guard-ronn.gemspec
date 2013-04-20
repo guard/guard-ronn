@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.files       = Dir.glob('{lib}/**/*') + %w[CHANGELOG.md LICENSE README.md]
   s.homepage    = 'http://rubygems.org/gems/guard-ronn'
 
-  s.add_dependency 'guard', '>= 1.1.0'
-  s.add_dependency 'ronn',  '~> 0.7.3'
+  s.add_dependency 'guard', '~> 1.8'
+  s.add_dependency 'ronn',  '~> 0.7'
 
-  s.add_development_dependency 'bundler', '~> 1.1'
-  s.add_development_dependency 'rspec',   '~> 2.10'
+  s.add_development_dependency 'bundler', '~> 1.3'
+  s.add_development_dependency 'rspec',   '~> 2.13'
 end

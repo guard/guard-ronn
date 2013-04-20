@@ -11,14 +11,14 @@ module Guard
           paths.reject { |p| included_in_other_path?(p, paths) }
         end
 
+        def ronn_files
+          @ronn_files ||= Dir['man/*.{ronn,md,markdown}']
+        end
+
       private
 
         def ronn_file?(path)
           ronn_files.include?(path)
-        end
-
-        def ronn_files
-          @ronn_files ||= Dir["man/*.{ronn,md,markdown}"]
         end
 
         def clear_ronn_files_list_after

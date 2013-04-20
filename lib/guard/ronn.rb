@@ -8,10 +8,9 @@ module Guard
     autoload :Inspector, 'guard/ronn/inspector'
     autoload :Formatter, 'guard/ronn/formatter'
 
-    def initialize(watchers=[], options={})
+    def initialize(watchers = [], options = {})
       super
-      @options = {
-      }.merge(options)
+      @options = options
     end
 
     # Call once when guard starts
@@ -20,10 +19,10 @@ module Guard
     end
 
     def run_all
-      Runner.run(["man/*"], @options.merge(:message => "Building all manuals"))
+      Runner.run(Inspector.ronn_files, @options.merge(:message => 'Building all manuals'))
     end
 
-    def run_on_change(paths)
+    def run_on_changes(paths)
       Runner.run(Inspector.clean(paths), @options)
     end
 

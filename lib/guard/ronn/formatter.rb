@@ -3,13 +3,13 @@ module Guard
     module Formatter
 
       def notify(success)
-        ::Guard::Notifier.notify(guard_message(success), :title => "Ronn results", :image => guard_image(success))
+        ::Guard::Notifier.notify(guard_message(success), :title => 'Ronn results', :image => guard_image(success))
       end
 
     private
 
       def guard_message(success)
-        success ? "Manual generation done!" : "Manual generation failed!"
+        success ? 'Manual generation done!' : 'Manual generation failed!'
       end
 
       # failed | success

@@ -1,6 +1,12 @@
+## git master
+
+### Bug fix
+
+* Ensure #run_all generates manual for Ronn files only!. ([@rymai][])
+
 ## 0.2.0 - June 3, 2012
 
-### Change:
+### Change
 
 * Updated for Guard 1.1 ([@rymai][])
 

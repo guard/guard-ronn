@@ -1,11 +1,9 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
-# Specify your gem's dependencies in guard-ronn.gemspec
 gemspec
 
 gem 'rake'
-gem 'ruby_gntp'
-gem 'guard-rspec', :github => "guard/guard-rspec", :branch => "guard_1_1"
-platforms :ruby do
-  gem 'rb-readline'
+group :development do
+  gem 'ruby_gntp'
+  gem 'guard-rspec'
 end
