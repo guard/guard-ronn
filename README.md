@@ -31,14 +31,9 @@ By default, Guard::Ronn watch for files with the `.ronn`, `.md` or `.markdown` e
 
 ## Guardfile
 
-``` ruby
-guard 'ronn' do
-  watch(%r{^man/.+\.ronn$})
-  watch(%r{^man/.+\.m(ark)?d(own)?$})
-end
-```
+See the [template Guardfile](https://github.com/guard/guard-ronn/blob/master/lib/guard/ronn/templates/Guardfile) for some examples.
 
-Please read [Guard doc](https://github.com/guard/guard#readme) for more information about the Guardfile DSL.
+Please read the [Guard documentation](https://github.com/guard/guard#readme) for more info about the Guardfile DSL.
 
 ## Options
 
@@ -50,7 +45,7 @@ guard 'ronn', :cli => "--html" do
 end
 ```
 
-### List of available options:
+### Available options
 
 ``` ruby
 :cli => '--html'  # pass arbitrary Ronn CLI arguments, default: ''
@@ -81,3 +76,7 @@ For questions please join us in our [Google group](http://groups.google.com/grou
 ## Author
 
 [Rémy Coutable](https://github.com/rymai) ([@rymai](http://twitter.com/rymai), [rymai.me](http://rymai.me))
+
+## Contributors
+
+https://github.com/guard/guard-ronn/contributors
