@@ -58,7 +58,7 @@ You can use the awesome [gem-man](https://github.com/defunkt/gem-man) by [defunk
 
 ## Development
 
-* Documentation hosted at [RubyDoc](http://rubydoc.info/github/guard/guard-ronn/master/frames).
+* Documentation hosted at [RubyDoc](http://rubydoc.info/gems/guard-ronn/frames).
 * Source hosted at [GitHub](https://github.com/guard/guard-ronn).
 
 Pull requests are very welcome! Please try to follow these simple rules if applicable:
