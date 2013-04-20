@@ -4,9 +4,9 @@ require 'ronn'
 
 module Guard
   class Ronn < Guard
-    autoload :Runner,    'guard/ronn/runner'
-    autoload :Inspector, 'guard/ronn/inspector'
-    autoload :Formatter, 'guard/ronn/formatter'
+    require 'guard/ronn/runner'
+    require 'guard/ronn/inspector'
+    require 'guard/ronn/notifier'
 
     def initialize(watchers = [], options = {})
       super
