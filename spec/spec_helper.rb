@@ -1,6 +1,10 @@
-require 'rspec'
+require 'coveralls'
+Coveralls.wear!
+
 require 'guard/ronn'
-ENV["GUARD_ENV"] = 'test'
+require 'rspec'
+
+ENV['GUARD_ENV'] = 'test'
 
 RSpec.configure do |config|
   config.color_enabled = true

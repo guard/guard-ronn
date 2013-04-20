@@ -11,3 +11,5 @@ Gemfile.lock
 .fseventsd
 Desktop DB
 Desktop DF
+
+coverage/
