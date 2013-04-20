@@ -2,6 +2,7 @@
 
 ### Improvements
 
+* Use an instance of Runner instead of calling a class method on it. ([@rymai][])
 * Get rid of `autoload`. ([@rymai][])
 
 ## 1.0 - April 20, 2013

@@ -1,42 +1,44 @@
 require 'spec_helper'
 
 describe Guard::Ronn do
-  before do
-    Dir.stub(:[]) { Dir.glob('spec/fixtures/*.{ronn,md,markdown}') }
+  let(:options) { {} }
+  let(:guard_plugin) { Guard::Ronn.new([], options) }
+
+  before { Dir.stub(:[]) { Dir.glob('spec/fixtures/*.{ronn,md,markdown}') } }
+
+  describe '#initialize' do
+    let(:options) { { :cli => '--html' } }
+
+    it 'passes options to runner' do
+      Guard::Ronn::Runner.should_receive(:new).with(:cli => '--html')
+
+      guard_plugin
+    end
   end
-  let(:default_options) { {} }
-  subject { Guard::Ronn.new }
 
   describe '#start' do
     it 'displays an initial message' do
       Guard::UI.should_receive(:info).with("Guard::Ronn is running, with Ronn #{::Ronn.version}!")
-      subject.start
+
+      guard_plugin.start
     end
   end
 
   describe '#run_all' do
     it 'build all manuals' do
-      Guard::Ronn::Runner.should_receive(:run).with(['spec/fixtures/guard-ronn.ronn', 'spec/fixtures/guard-ronn.md', 'spec/fixtures/guard-ronn.markdown'], default_options.merge(:message => 'Building all manuals'))
-      subject.run_all
-    end
+      guard_plugin.runner.should_receive(:run).with(
+        ['spec/fixtures/guard-ronn.ronn', 'spec/fixtures/guard-ronn.md', 'spec/fixtures/guard-ronn.markdown'],
+        :message => 'Building all manuals')
 
-    it 'directly passes :cli option to runner' do
-      subject = Guard::Ronn.new([], { :cli => '--html' })
-      Guard::Ronn::Runner.should_receive(:run).with(['spec/fixtures/guard-ronn.ronn', 'spec/fixtures/guard-ronn.md', 'spec/fixtures/guard-ronn.markdown'], default_options.merge(:message => 'Building all manuals', :cli => '--html'))
-      subject.run_all
+      guard_plugin.run_all
     end
   end
 
   describe '#run_on_changes' do
     it 'runs Ronn with paths' do
-      Guard::Ronn::Runner.should_receive(:run).with(['spec/fixtures/guard-ronn.md'], default_options)
-      subject.run_on_changes(['spec/fixtures/guard-ronn.md'])
-    end
+      guard_plugin.runner.should_receive(:run).with(['spec/fixtures/guard-ronn.md'])
 
-    it 'directly passes :cli option to runner' do
-      subject = Guard::Ronn.new([], { :cli => '--html' })
-      Guard::Ronn::Runner.should_receive(:run).with(['spec/fixtures/guard-ronn.md'], default_options.merge(:cli => '--html'))
-      subject.run_on_changes(['spec/fixtures/guard-ronn.md'])
+      guard_plugin.run_on_changes(['spec/fixtures/guard-ronn.md'])
     end
   end
 

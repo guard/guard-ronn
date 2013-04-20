@@ -8,9 +8,11 @@ module Guard
     require 'guard/ronn/inspector'
     require 'guard/ronn/notifier'
 
+    attr_reader :runner
+
     def initialize(watchers = [], options = {})
       super
-      @options = options
+      @runner = Runner.new(@options)
     end
 
     # Call once when guard starts
@@ -19,11 +21,11 @@ module Guard
     end
 
     def run_all
-      Runner.run(Inspector.ronn_files, @options.merge(:message => 'Building all manuals'))
+      @runner.run(Inspector.ronn_files, :message => 'Building all manuals')
     end
 
     def run_on_changes(paths)
-      Runner.run(Inspector.clean(paths), @options)
+      @runner.run(Inspector.clean(paths))
     end
 
   end
