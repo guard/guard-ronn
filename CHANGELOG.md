@@ -2,6 +2,7 @@
 
 ### Improvements
 
+* Rename `Formatter` to `Notifier` and instantiate it in `Runner`'s constructor. ([@rymai][])
 * Use an instance of Runner instead of calling a class method on it. ([@rymai][])
 * Get rid of `autoload`. ([@rymai][])
 
