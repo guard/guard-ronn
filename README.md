@@ -1,4 +1,5 @@
-# Guard::Ronn [![Gem Version](https://badge.fury.io/rb/guard-ronn.png)](http://badge.fury.io/rb/guard-ronn) [![Build Status](https://travis-ci.org/guard/guard-ronn.png?branch=master)](https://travis-ci.org/guard/guard-ronn) [![Dependency Status](https://gemnasium.com/guard/guard-ronn.png)](https://gemnasium.com/guard/guard-ronn) [![Code Climate](https://codeclimate.com/github/guard/guard-ronn.png)](https://codeclimate.com/github/guard/guard-ronn) [![Coverage Status](https://coveralls.io/repos/guard/guard-ronn/badge.png?branch=master)](https://coveralls.io/r/guard/guard-ronn)
+# Guard::Ronn
+[![Gem Version](https://badge.fury.io/rb/guard-ronn.png)](http://badge.fury.io/rb/guard-ronn) [![Build Status](https://travis-ci.org/guard/guard-ronn.png?branch=master)](https://travis-ci.org/guard/guard-ronn) [![Dependency Status](https://gemnasium.com/guard/guard-ronn.png)](https://gemnasium.com/guard/guard-ronn) [![Code Climate](https://codeclimate.com/github/guard/guard-ronn.png)](https://codeclimate.com/github/guard/guard-ronn) [![Coverage Status](https://coveralls.io/repos/guard/guard-ronn/badge.png?branch=master)](https://coveralls.io/r/guard/guard-ronn)
 
 [Ronn](https://github.com/rtomayko/ronn) guard automatically build manuals when markdown source files are modified.
 
