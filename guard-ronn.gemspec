@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir.glob('{lib}/**/*') + %w[CHANGELOG.md LICENSE README.md]
 
-  s.add_dependency 'guard', '~> 1.8'
+  s.add_dependency 'guard', '>= 1.8'
   s.add_dependency 'ronn',  '~> 0.7'
 
   s.add_development_dependency 'bundler', '~> 1.3'

@@ -1,12 +1,17 @@
-## git master
+## Master
+
+No changes.
+
+## 1.1.0 - September 12, 2013
 
 ### Improvements
 
+* Depend on Guard >= 1.8. ([@rymai][])
 * Rename `Formatter` to `Notifier` and instantiate it in `Runner`'s constructor. ([@rymai][])
 * Use an instance of Runner instead of calling a class method on it. ([@rymai][])
 * Get rid of `autoload`. ([@rymai][])
 
-## 1.0 - April 20, 2013
+## 1.0.0 - April 20, 2013
 
 ### Bug fix
 
