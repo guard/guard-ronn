@@ -3,14 +3,14 @@ require 'guard/guard'
 require 'ronn'
 
 module Guard
-  class Ronn < Guard
+  class Ronn < Plugin
     require 'guard/ronn/runner'
     require 'guard/ronn/inspector'
     require 'guard/ronn/notifier'
 
     attr_reader :runner
 
-    def initialize(watchers = [], options = {})
+    def initialize(options = {})
       super
       @runner = Runner.new(@options)
     end
