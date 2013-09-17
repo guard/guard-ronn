@@ -1,5 +1,5 @@
 require 'guard'
-require 'guard/guard'
+require 'guard/plugin'
 require 'ronn'
 
 module Guard
