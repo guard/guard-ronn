@@ -1,1 +1,1 @@
-# Moved to [Github releases](https://github.com/guard/guard-ronn/releases) page.
+# Moved to [GitHub releases](https://github.com/guard/guard-ronn/releases) page.
