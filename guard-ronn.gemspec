@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Guard gem for Ronn.'
   s.description = 'Guard::Ronn automatically builds manual pages.'
 
-  s.add_runtime_dependency 'guard', '>= 1.8'
+  s.add_runtime_dependency 'guard', '~> 2.0'
   s.add_runtime_dependency 'ronn',  '~> 0.7'
 
   s.add_development_dependency 'bundler'
