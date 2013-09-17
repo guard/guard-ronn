@@ -21,7 +21,7 @@ module Guard
     end
 
     def run_all
-      @runner.run(Inspector.ronn_files, :message => 'Building all manuals')
+      @runner.run(Inspector.ronn_files, message: 'Building all manuals')
     end
 
     def run_on_changes(paths)

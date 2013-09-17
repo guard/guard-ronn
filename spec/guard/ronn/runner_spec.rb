@@ -42,7 +42,7 @@ describe Guard::Ronn::Runner do
           it 'runs with CLI options passed to Ronn' do
             runner.should_receive(:system).with('bundle exec ronn --html man/*')
 
-            runner.run(['man/*'], :cli => '--html')
+            runner.run(['man/*'], cli: '--html')
           end
         end
 
@@ -50,7 +50,7 @@ describe Guard::Ronn::Runner do
           it 'runs without Bundler with bundler option to false' do
             runner.should_receive(:system).with('ronn man/*')
 
-            runner.run(['man/*'], :bundler => false)
+            runner.run(['man/*'], bundler: false)
           end
         end
       end
