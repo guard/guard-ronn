@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Guard::Ronn do
   let(:options) { {} }
-  let(:guard_plugin) { Guard::Ronn.new([], options) }
+  let(:guard_plugin) { Guard::Ronn.new(options) }
 
   before { Dir.stub(:[]) { Dir.glob('spec/fixtures/*.{ronn,md,markdown}') } }
 
