@@ -4,7 +4,7 @@
 [Ronn](https://github.com/rtomayko/ronn) Guard plugin automatically build manuals when markdown source files are modified.
 
 * Compatible with Ronn ~> 0.7.
-* Tested against Ruby 1.9.3, Rubinius & JRuby (1.9 mode only).
+* Tested against Ruby 1.9.3, 2.0.0, Rubinius & JRuby (1.9 mode only).
 
 ## Install
 
@@ -68,7 +68,6 @@ Pull requests are very welcome! Please try to follow these simple rules if appli
 * Make sure your patches are well tested. All specs must pass on [Travis CI](https://travis-ci.org/guard/guard-ronn).
 * Update the [Yard](http://yardoc.org/) documentation.
 * Update the [README](https://github.com/guard/guard-ronn/blob/master/README.md).
-* Update the [CHANGELOG](https://github.com/guard/guard-ronn/blob/master/CHANGELOG.md) for noteworthy changes (don't forget to run `bundle exec pimpmychangelog` and watch the magic happen)!
 * Please **do not change** the version number.
 
 For questions please join us in our [Google group](http://groups.google.com/group/guard-dev) or on
@@ -80,4 +79,4 @@ For questions please join us in our [Google group](http://groups.google.com/grou
 
 ## Contributors
 
-[https://github.com/guard/guard-ronn/contributors](https://github.com/guard/guard-ronn/contributors)
+[https://github.com/guard/guard-ronn/graphs/contributors](https://github.com/guard/guard-ronn/graphs/contributors)
