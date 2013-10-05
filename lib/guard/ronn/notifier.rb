@@ -5,8 +5,8 @@ module Guard
       def notify(result)
         @result = result
 
-        ::Guard::Notifier.notify(guard_message, :title => 'Ronn results',
-                                                :image => guard_image)
+        ::Guard::Notifier.notify(guard_message, title: 'Ronn results',
+                                                image: guard_image)
       end
 
       private

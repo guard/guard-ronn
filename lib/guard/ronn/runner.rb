@@ -15,7 +15,7 @@ module Guard
         options = @options.merge(options)
         message = options[:message] || "Running: #{paths.join(' ')}"
 
-        ::Guard::UI.info(message, :reset => true)
+        ::Guard::UI.info(message, reset: true)
 
         result = system(ronn_command(paths, options))
 

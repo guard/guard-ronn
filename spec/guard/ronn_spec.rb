@@ -2,15 +2,15 @@ require 'spec_helper'
 
 describe Guard::Ronn do
   let(:options) { {} }
-  let(:guard_plugin) { Guard::Ronn.new([], options) }
+  let(:guard_plugin) { Guard::Ronn.new(options) }
 
   before { Dir.stub(:[]) { Dir.glob('spec/fixtures/*.{ronn,md,markdown}') } }
 
   describe '#initialize' do
-    let(:options) { { :cli => '--html' } }
+    let(:options) { { cli: '--html' } }
 
     it 'passes options to runner' do
-      Guard::Ronn::Runner.should_receive(:new).with(:cli => '--html')
+      Guard::Ronn::Runner.should_receive(:new).with(cli: '--html')
 
       guard_plugin
     end
@@ -28,7 +28,7 @@ describe Guard::Ronn do
     it 'build all manuals' do
       guard_plugin.runner.should_receive(:run).with(
         ['spec/fixtures/guard-ronn.ronn', 'spec/fixtures/guard-ronn.md', 'spec/fixtures/guard-ronn.markdown'],
-        :message => 'Building all manuals')
+        message: 'Building all manuals')
 
       guard_plugin.run_all
     end
