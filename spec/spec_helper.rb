@@ -1,14 +1,13 @@
-require 'coveralls'
-Coveralls.wear!
-
-require 'guard/ronn'
-require 'rspec'
+if ENV['CI']
+  require 'coveralls'
+  Coveralls.wear!
+end
 
 ENV['GUARD_ENV'] = 'test'
+require 'guard/ronn'
 
 RSpec.configure do |config|
-  config.color_enabled = true
-  config.filter_run focus: true
+  config.filter_run focus: ENV['CI'] != 'true'
   config.run_all_when_everything_filtered = true
   config.treat_symbols_as_metadata_keys_with_true_values = true
 
