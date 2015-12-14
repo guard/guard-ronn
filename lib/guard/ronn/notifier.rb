@@ -1,11 +1,11 @@
 module Guard
-  class Ronn
+  class Ronn < Plugin
     class Notifier
 
       def notify(result)
         @result = result
 
-        ::Guard::Notifier.notify(guard_message, title: 'Ronn results',
+        Guard::Compat::UI.notify(guard_message, title: 'Ronn results',
                                                 image: guard_image)
       end
 

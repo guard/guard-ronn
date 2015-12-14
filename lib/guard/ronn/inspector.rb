@@ -1,5 +1,5 @@
 module Guard
-  class Ronn
+  class Ronn < Plugin
     module Inspector
       class << self
         def clean(paths)

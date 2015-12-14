@@ -1,26 +1,31 @@
-require 'spec_helper'
+require 'guard/compat/test/helper'
+require 'guard/ronn/runner'
 
 describe Guard::Ronn::Runner do
   let(:runner) { described_class.new }
 
+  before do
+    allow(Guard::Compat::UI).to receive(:info)
+  end
+
   describe '#run' do
     before do
-      runner.notifier.stub(:notify)
+      allow(runner.notifier).to receive(:notify)
     end
 
     context 'when passed an empty paths list' do
       it 'returns false' do
-        runner.run([]).should be_false
+        expect(runner.run([])).to be false
       end
     end
 
     context 'in a folder without Bundler' do
       before do
-        Dir.stub(:pwd).and_return(@fixture_path.join('empty'))
+        allow(Dir).to receive(:pwd) { @fixture_path.join('empty') }
       end
 
       it 'runs' do
-        runner.should_receive(:system).with('ronn man/*')
+        expect(runner).to receive(:system).with('ronn man/*')
 
         runner.run(['man/*'])
       end
@@ -28,11 +33,11 @@ describe Guard::Ronn::Runner do
 
     context 'in a folder with Bundler' do
       before do
-        Dir.stub(:pwd).and_return(@fixture_path)
+        allow(Dir).to receive(:pwd) { @fixture_path }
       end
 
       it 'runs with Bundler' do
-        runner.should_receive(:system).with('bundle exec ronn man/*')
+        expect(runner).to receive(:system).with('bundle exec ronn man/*')
 
         runner.run(['man/*'])
       end
@@ -40,7 +45,7 @@ describe Guard::Ronn::Runner do
       describe 'options' do
         describe ':cli' do
           it 'runs with CLI options passed to Ronn' do
-            runner.should_receive(:system).with('bundle exec ronn --html man/*')
+            expect(runner).to receive(:system).with('bundle exec ronn --html man/*')
 
             runner.run(['man/*'], cli: '--html')
           end
@@ -48,7 +53,7 @@ describe Guard::Ronn::Runner do
 
         describe ':bundler' do
           it 'runs without Bundler with bundler option to false' do
-            runner.should_receive(:system).with('ronn man/*')
+            expect(runner).to receive(:system).with('ronn man/*')
 
             runner.run(['man/*'], bundler: false)
           end
@@ -59,15 +64,15 @@ describe Guard::Ronn::Runner do
     describe 'result message' do
       describe 'calls notify when manuals build is finished' do
         it 'with true when build succeeds' do
-          runner.should_receive(:system).with('bundle exec ronn man/*') { true }
-          runner.notifier.should_receive(:notify).with(true)
+          expect(runner).to receive(:system).with('bundle exec ronn man/*') { true }
+          expect(runner.notifier).to receive(:notify).with(true)
 
           runner.run(['man/*'])
         end
 
         it 'with false when build succeeds' do
-          runner.should_receive(:system).with('bundle exec ronn man/*') { false }
-          runner.notifier.should_receive(:notify).with(false)
+          expect(runner).to receive(:system).with('bundle exec ronn man/*') { false }
+          expect(runner.notifier).to receive(:notify).with(false)
 
           runner.run(['man/*'])
         end
