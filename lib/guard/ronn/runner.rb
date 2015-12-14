@@ -1,5 +1,5 @@
 module Guard
-  class Ronn
+  class Ronn < Plugin
     class Runner
 
       attr_reader :notifier
@@ -15,7 +15,7 @@ module Guard
         options = @options.merge(options)
         message = options[:message] || "Running: #{paths.join(' ')}"
 
-        ::Guard::UI.info(message, reset: true)
+        Compat::UI.info(message, reset: true)
 
         result = system(ronn_command(paths, options))
 

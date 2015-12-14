@@ -1,5 +1,6 @@
-# encoding: utf-8
-$:.push File.expand_path('../lib', __FILE__)
+# coding: utf-8
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'guard/ronn/version'
 
 Gem::Specification.new do |s|
@@ -14,8 +15,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.2'
 
-  s.add_runtime_dependency 'guard', '~> 2.0'
-  s.add_runtime_dependency 'ronn',  '>= 0.7'
+  s.add_dependency 'guard', '~> 2.1'
+  s.add_dependency 'guard-compat', '~> 1.1'
+  s.add_dependency 'ronn',  '>= 0.7'
 
   s.add_development_dependency 'bundler'
 

@@ -1,12 +1,12 @@
-require 'guard'
-require 'guard/plugin'
+require 'guard/compat/plugin'
 require 'ronn'
+
+require 'guard/ronn/runner'
+require 'guard/ronn/inspector'
+require 'guard/ronn/notifier'
 
 module Guard
   class Ronn < Plugin
-    require 'guard/ronn/runner'
-    require 'guard/ronn/inspector'
-    require 'guard/ronn/notifier'
 
     attr_reader :runner
 
@@ -17,7 +17,7 @@ module Guard
 
     # Call once when guard starts
     def start
-      UI.info "Guard::Ronn is running, with Ronn #{::Ronn.version}!"
+      Guard::Compat::UI.info "Guard::Ronn is running, with Ronn #{::Ronn.version}!"
     end
 
     def run_all
