@@ -4,7 +4,7 @@
 [Ronn](https://github.com/rtomayko/ronn) Guard plugin automatically build manuals when markdown source files are modified.
 
 * Compatible with Ronn ~> 0.7.
-* Tested against Ruby 1.9.3, 2.0.0, Rubinius (1.9 mode only).
+* Tested against Ruby 2.0.0, 2.1.7, 2.2.3 & Rubinius (1.9 mode only).
 
 ## Install
 
